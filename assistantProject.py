@@ -21,8 +21,6 @@ def is_resource_file(filename, project_type="default"):
     return any(filename.endswith(ext) for ext in exts)
 
 
-
-
 def get_models():
     """Return list of installed Ollama models."""
     result = subprocess.run(["ollama", "list"], capture_output=True, text=True)
@@ -52,10 +50,6 @@ def run_ollama(model, prompt):
         return ""
 
 
-
-
-
-
 def generate_project_plan(project_name, project_description, model):
     prompt = (
         f"You are an AI assistant helping plan a software project named '{project_name}'.\n"
@@ -82,7 +76,6 @@ def generate_project_plan(project_name, project_description, model):
         print("⚠️ Failed to parse AI response as JSON. Here's what it returned:")
         print(plan_text)
         return None
-
 
 
 def create_project(project_name, model):
@@ -153,7 +146,6 @@ def create_project(project_name, model):
             print("Invalid input, please enter y/n/f.")
 
 
-
 def generate_project_plan(project_name, project_description, project_type, model):
     prompt = (
         f"You are an AI assistant helping plan a {project_type} project named '{project_name}'.\n"
@@ -181,9 +173,7 @@ def generate_project_plan(project_name, project_description, project_type, model
         print(plan_text)
         return None
 
-
-
-    
+  
 def save_project_plan(project_path, plan):
     """Save the project plan as plan.json."""
     plan_file = os.path.join(project_path, "plan.json")
@@ -389,8 +379,6 @@ def main():
             _, _, project_name = user_input.split(" ", 2)
             create_project(project_name, model)
 
-
-
         else:
             response = run_ollama(model, user_input)
             print("\n💬", response, "\n")
@@ -398,4 +386,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
