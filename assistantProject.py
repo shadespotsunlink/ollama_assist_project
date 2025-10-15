@@ -10,7 +10,7 @@ WORKSPACE = os.path.abspath("projects")  # base folder for all projects
 CURRENT_PROJECT = None  # will store project folder path
 PROJECT_RESOURCE_EXTS = {
     "website": [".css", ".js", ".json"],
-    "python_classroom": [".py", ".ipynb", ".csv", ".json", ".md"],
+    "python": [".py", ".ipynb", ".csv", ".json", ".md"],
     "default": [".css", ".js", ".py", ".json", ".csv", ".md"]
 }
 
@@ -398,3 +398,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
